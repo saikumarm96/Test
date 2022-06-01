@@ -17,13 +17,13 @@ public class Bank extends Exception {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection a = DriverManager.getConnection("jdbc:mysql://172.17.15.40:3306/sai kumar", "itgusr5",
 					"itgusr5");
-			System.out.println("enter username:");
+			System.out.println("enter Username:");
 			String e = d.nextLine();
 			PreparedStatement b = a.prepareStatement("select * from bank where acc_name=?");
 			b.setString(1, e);
 			ResultSet c = b.executeQuery();
 			if (c.next()) {
-				System.out.println("enter pin:");
+				System.out.println("enter Pin:");
 				int f = d.nextInt();
 				int choice;
 				if (f == c.getInt("Password")) {
